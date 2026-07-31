@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import AxleGraphic from "@/components/AxleGraphic";
 import { Icon } from "@/components/Icons";
 import { CTABand } from "@/components/PageHero";
 import { getDict } from "@/lib/i18n";
@@ -14,25 +14,38 @@ export default function Home({ params }: { params: { locale: string } }) {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-[136px] pb-20 sm:pt-[150px] sm:pb-24">
-        <div
-          className="grid-bg absolute inset-0 opacity-50"
-          style={{
-            maskImage: "radial-gradient(120% 80% at 70% 30%, #000 0%, transparent 72%)",
-            WebkitMaskImage: "radial-gradient(120% 80% at 70% 30%, #000 0%, transparent 72%)",
-          }}
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -right-[8%] top-[8%] h-[70%] w-[60%] blur-2xl"
-          style={{ background: "radial-gradient(closest-side, var(--heat-glow), transparent 70%)" }}
-          aria-hidden
-        />
+      <section className="relative flex min-h-[88vh] items-center overflow-hidden pt-[96px] pb-16">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-forge.webp"
+            alt="HAK-ER — kapalı kalıp sıcak dövme presi"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg,#071620 0%,rgba(7,22,32,0.94) 26%,rgba(7,22,32,0.6) 56%,rgba(7,22,32,0.25) 100%)",
+            }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg,rgba(7,22,32,0.55) 0%,transparent 24%,transparent 52%,#071620 100%)",
+            }}
+            aria-hidden
+          />
+        </div>
         <div className="shell relative">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <Reveal>
               <span className="eyebrow">{h.heroEyebrow}</span>
-              <h1 className="h-display mt-5 text-[clamp(52px,9.5vw,116px)]">
+              <h1 className="h-display mt-5 text-[clamp(48px,8.5vw,104px)]">
                 {h.heroTitlePre}
                 <span className="bg-heat-grad bg-clip-text text-transparent">
                   {h.heroTitleHot}
@@ -51,10 +64,6 @@ export default function Home({ params }: { params: { locale: string } }) {
               </div>
             </Reveal>
           </div>
-
-          <Reveal delay={0.15} className="mt-16">
-            <AxleGraphic className="w-full" />
-          </Reveal>
         </div>
       </section>
 

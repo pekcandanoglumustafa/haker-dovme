@@ -8,6 +8,8 @@ export const en: Dict = {
     chambers:
       "Member of Konya Chamber of Industry & Konya Chamber of Commerce",
     otherLangLabel: "TR",
+    catalog: "Catalogue",
+    follow: "Follow Us",
   },
   nav: {
     home: "Home",
@@ -260,14 +262,14 @@ export const en: Dict = {
     },
   ],
   processes: [
-    { n: "01", title: "Die Shop", subtitle: "Engineering & Die Design", desc: "Our die shop is equipped with modern CNC machines so designs transfer exactly to production. All die manufacturing is done in-house." },
-    { n: "02", title: "Material", subtitle: "Raw Material Control", desc: "Each batch of steel enters production only after its origin and chemical composition are verified. Traceability is maintained end to end." },
-    { n: "03", title: "Forging", subtitle: "Closed-Die Hot Forging", desc: "A broad press and hammer park for steel parts of varying size and geometry. High-strength, pore-free internal structure." },
-    { n: "04", title: "Upsetting", subtitle: "Head Forming", desc: "On upsetter machines with localized heating, raw material of min Ø30 and max Ø200 is heated and upset up to Ø400." },
-    { n: "05", title: "Heat Treatment", subtitle: "Metallurgical", desc: "Hardness and mechanical properties are optimized to the customer specification via controlled heat-treatment lines." },
-    { n: "06", title: "Machining", subtitle: "CNC Turning & Milling", desc: "Finishing operations on modern CNC machines; forged parts are brought to finished-product tolerances." },
-    { n: "07", title: "Non-Ferrous Metals", subtitle: "Alloys", desc: "Beyond steel, forging and machining capability in project-specific non-ferrous metal alloys." },
-    { n: "08", title: "Dispatch", subtitle: "Packaging & Delivery", desc: "Parts that pass quality control are delivered with suitable packaging through domestic and four-country export channels." },
+    { n: "01", title: "Die Shop", subtitle: "Engineering & Die Design", desc: "Our die shop is equipped with modern CNC machines so designs transfer exactly to production. All die manufacturing is done in-house.", img: "/images/kaliphane.webp" },
+    { n: "02", title: "Material", subtitle: "Raw Material Control", desc: "Each batch of steel enters production only after its origin and chemical composition are verified. Traceability is maintained end to end.", img: "/images/malzeme.webp" },
+    { n: "03", title: "Forging", subtitle: "Closed-Die Hot Forging", desc: "Pre-cut raw material is heated under controlled temperature in induction furnaces and sent to the forging line. High-strength forging is carried out on a broad park of mechanical presses, air and hydraulic hammers.", img: "/images/forge.webp" },
+    { n: "04", title: "Upsetting", subtitle: "Head Forming", desc: "On upsetter machines with localized heating, raw material of min Ø30 and max Ø200 is heated and upset up to Ø400.", img: "/images/kafa.webp" },
+    { n: "05", title: "Heat Treatment", subtitle: "Metallurgical", desc: "Hardness and mechanical properties are optimized to the customer specification via controlled heat-treatment lines.", img: "/images/isil.webp" },
+    { n: "06", title: "Machining", subtitle: "CNC Turning & Milling", desc: "To add value to forged parts and offer a more complete service, finishing operations are performed on modern CNC machines; parts are brought to finished-product tolerances.", img: "/images/mekanik.webp" },
+    { n: "07", title: "Non-Ferrous Metals", subtitle: "Alloys", desc: "Beyond steel, we have forging and machining capability in aluminium and project-specific non-ferrous metal alloys.", img: "/images/demirdisi.webp" },
+    { n: "08", title: "Dispatch", subtitle: "Packaging & Delivery", desc: "Parts that pass quality control are delivered with suitable packaging through domestic and four-country export channels.", img: "/images/sevkiyat.webp" },
   ],
   qualityTests: [
     { n: "01", title: "Dimensional Measurement", desc: "Tolerance verification with calibrated measuring instruments." },

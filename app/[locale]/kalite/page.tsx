@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { PageHero, CTABand } from "@/components/PageHero";
 import { getDict } from "@/lib/i18n";
@@ -10,6 +11,17 @@ export default function Kalite({ params }: { params: { locale: string } }) {
   return (
     <>
       <PageHero eyebrow={q.heroEyebrow} title={q.heroTitle} intro={q.heroIntro} />
+
+      <section className="pb-14">
+        <div className="shell">
+          <Reveal>
+            <div className="relative aspect-[1000/300] w-full overflow-hidden rounded-[3px] border border-line">
+              <Image src="/images/lab.webp" alt="HAK-ER metalurjik laboratuvar" fill sizes="1180px" className="object-cover" />
+              <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,22,32,0.65), transparent 55%)" }} />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="pb-20">
         <div className="shell grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">

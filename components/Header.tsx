@@ -16,14 +16,14 @@ function Logo({ sub }: { sub: string }) {
           <path d="M21 24V10h3v5h2.5v-5H30v14h-3.5v-6H24v6h-3Z" fill="#edeef1" />
           <defs>
             <linearGradient id="lg" x1="8" y1="10" x2="20" y2="24" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffce3b" />
-              <stop offset="1" stopColor="#ff5a10" />
+              <stop stopColor="#6bb2dd" />
+              <stop offset="1" stopColor="#2f88c4" />
             </linearGradient>
           </defs>
         </svg>
       </span>
       <span className="font-display text-[21px] font-extrabold leading-none tracking-[0.02em]">
-        HAKER
+        HAK-ER
         <span className="mt-[2px] block text-[11px] font-semibold tracking-[0.26em] text-ash">
           {sub}
         </span>

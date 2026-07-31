@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { PageHero, CTABand } from "@/components/PageHero";
 import { getDict } from "@/lib/i18n";
@@ -10,6 +11,17 @@ export default function Kurumsal({ params }: { params: { locale: string } }) {
   return (
     <>
       <PageHero eyebrow={k.heroEyebrow} title={k.heroTitle} intro={k.heroIntro} />
+
+      <section className="pb-14">
+        <div className="shell">
+          <Reveal>
+            <div className="relative aspect-[1000/300] w-full overflow-hidden rounded-[3px] border border-line">
+              <Image src="/images/kaliphane.webp" alt="HAK-ER tesis" fill sizes="1180px" className="object-cover" />
+              <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,22,32,0.65), transparent 55%)" }} />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="pb-20">
         <div className="shell">

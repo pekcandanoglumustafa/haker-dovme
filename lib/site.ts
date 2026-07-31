@@ -13,6 +13,11 @@ export const company = {
     "Aşağıpınarbaşı Mah. Ankara Cad. No:334",
     "42250 Selçuklu / Konya / Türkiye",
   ],
+  catalogUrl: "/katalog.pdf",
+  social: {
+    facebook: "https://www.facebook.com/profile.php?id=100009233378315",
+    twitter: "https://twitter.com/HAKERDOVME",
+  },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Haker+%C3%87elik+D%C3%B6vme+Konya",
 };
