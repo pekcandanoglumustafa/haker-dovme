@@ -2,33 +2,31 @@
 
 import { useState } from "react";
 import { company } from "@/lib/site";
+import type { Dict } from "@/lib/dictionaries/tr";
 
 const field =
   "w-full rounded-[2px] border border-line bg-void px-4 py-3 text-[15px] text-pearl placeholder:text-ash-dim outline-none transition-colors focus:border-heat-core";
-const label =
-  "mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-ash";
+const label = "mb-2 block font-mono text-[11px] uppercase tracking-[0.14em] text-ash";
 
-export default function ContactForm() {
+export default function ContactForm({ dict }: { dict: Dict }) {
   const [sent, setSent] = useState(false);
+  const f = dict.iletisim.form;
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    const data = new FormData(e.currentTarget);
     const name = String(data.get("name") || "");
     const companyName = String(data.get("company") || "");
     const phone = String(data.get("phone") || "");
     const message = String(data.get("message") || "");
-
-    const subject = `Teklif Talebi — ${name}${companyName ? " / " + companyName : ""}`;
+    const subject = `${f.subject} — ${name}${companyName ? " / " + companyName : ""}`;
     const body = [
-      `Ad Soyad: ${name}`,
-      `Firma: ${companyName}`,
-      `Telefon: ${phone}`,
+      `${f.lblName}: ${name}`,
+      `${f.lblCompany}: ${companyName}`,
+      `${f.lblPhone}: ${phone}`,
       "",
       message,
     ].join("\n");
-
     window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
@@ -36,58 +34,33 @@ export default function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-[3px] border border-line bg-graphite p-7 sm:p-9"
-    >
+    <form onSubmit={handleSubmit} className="rounded-[3px] border border-line bg-graphite p-7 sm:p-9">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label className={label} htmlFor="name">
-            Ad Soyad *
-          </label>
-          <input id="name" name="name" required className={field} placeholder="Adınız" />
+          <label className={label} htmlFor="name">{f.name} *</label>
+          <input id="name" name="name" required className={field} placeholder={f.namePh} />
         </div>
         <div>
-          <label className={label} htmlFor="company">
-            Firma
-          </label>
-          <input id="company" name="company" className={field} placeholder="Firma adı" />
+          <label className={label} htmlFor="company">{f.company}</label>
+          <input id="company" name="company" className={field} placeholder={f.companyPh} />
         </div>
         <div>
-          <label className={label} htmlFor="phone">
-            Telefon
-          </label>
+          <label className={label} htmlFor="phone">{f.phone}</label>
           <input id="phone" name="phone" className={field} placeholder="+90 ..." />
         </div>
         <div>
-          <label className={label} htmlFor="email">
-            E-posta
-          </label>
-          <input id="email" name="email" type="email" className={field} placeholder="ornek@firma.com" />
+          <label className={label} htmlFor="email">{f.email}</label>
+          <input id="email" name="email" type="email" className={field} placeholder={f.emailPh} />
         </div>
       </div>
       <div className="mt-5">
-        <label className={label} htmlFor="message">
-          Mesajınız *
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          className={field + " resize-none"}
-          placeholder="İhtiyacınızı ve varsa parça/teknik resim bilgisini kısaca yazın."
-        />
+        <label className={label} htmlFor="message">{f.message} *</label>
+        <textarea id="message" name="message" required rows={5} className={field + " resize-none"} placeholder={f.messagePh} />
       </div>
-
-      <button type="submit" className="btn mt-6 w-full justify-center sm:w-auto">
-        Teklif Talebini Gönder →
-      </button>
-
+      <button type="submit" className="btn mt-6 w-full justify-center sm:w-auto">{f.submit}</button>
       {sent && (
         <p className="mt-4 font-mono text-[12px] text-heat-mid">
-          E-posta uygulamanız açılıyor. Açılmadıysa {company.email} adresine
-          yazabilirsiniz.
+          {f.sent} {company.email}
         </p>
       )}
     </form>
